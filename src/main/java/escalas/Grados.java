@@ -10,6 +10,6 @@ abstract class Grados {
     }
 
     double lambda() {
-        return escala.lambda(this);
+        return escala.lambdaDesdeGrados(this);
     }
 }

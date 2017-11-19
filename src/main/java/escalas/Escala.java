@@ -9,20 +9,20 @@ public abstract class Escala {
         this.puntoEbullicion = puntoEbullicion;
     }
 
-    double temperatura(double lambda) {
-        double temperatura = puntoCongelacion * (1 - lambda) + puntoEbullicion * lambda;
-        return temperatura;
+    double gradosDesdeLambda(double lambda) {
+        double grados = puntoCongelacion * (1 - lambda) + puntoEbullicion * lambda;
+        return grados;
     }
 
-    abstract Grados grados(double temperatura);
+    abstract Grados grados(double grados);
 
-    double lambda(Grados grados) {
+    double lambdaDesdeGrados(Grados grados) {
         double lambda = (grados.grados - puntoCongelacion) / (puntoEbullicion - puntoCongelacion);
         return lambda;
     }
 
     public Grados grados(Grados grados) {
         double lambda = grados.lambda();
-        return grados(temperatura(lambda));
+        return grados(gradosDesdeLambda(lambda));
     }
 }

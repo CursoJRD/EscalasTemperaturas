@@ -6,7 +6,7 @@ public class EscalaKelvin extends Escala {
     }
 
     @Override
-    Grados grados(double temperatura) {
-        return new GradosKelvin(temperatura);
+    Grados grados(double grados) {
+        return new GradosKelvin(grados);
     }
 }
