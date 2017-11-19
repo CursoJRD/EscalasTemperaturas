@@ -30,15 +30,12 @@ public class Tabla {
     public String tabla(){
         StringBuilder sb = new StringBuilder();
         double grados = gradosIniciales;
-        Grados gradosOrigen, gradosDestino;
+        Grados gradosOrigen;
         while (grados <= gradosFinales) {
-            sb.append(grados);
-            sb.append(",");
             gradosOrigen = escalaOrigen.grados(grados);
+            sb.append(gradosOrigen + ",");
             for(Escala escala: escalasDestino) {
-                gradosDestino = escala.grados(gradosOrigen);
-                sb.append(gradosDestino);
-                sb.append(",");
+                sb.append(escala.grados(gradosOrigen) + ",");
             }
             sb.append("\n");
             grados += paso;
