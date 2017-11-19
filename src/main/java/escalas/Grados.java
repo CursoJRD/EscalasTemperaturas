@@ -1,6 +1,6 @@
 package escalas;
 
-abstract class Grados {
+public abstract class Grados {
     double grados;
     Escala escala;
 
@@ -11,5 +11,10 @@ abstract class Grados {
 
     double lambda() {
         return escala.lambdaDesdeGrados(this);
+    }
+
+    @Override
+    public String toString() {
+        return "" + grados;
     }
 }
