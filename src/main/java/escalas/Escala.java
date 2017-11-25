@@ -14,8 +14,6 @@ public abstract class Escala {
         return grados;
     }
 
-    public abstract Grados grados(double grados);
-
     double lambdaDesdeGrados(Grados grados) {
         double lambda = (grados.grados - puntoCongelacion) / (puntoEbullicion - puntoCongelacion);
         return lambda;
@@ -25,4 +23,6 @@ public abstract class Escala {
         double lambda = grados.lambda();
         return grados(gradosDesdeLambda(lambda));
     }
+
+    public abstract Grados grados(double grados);
 }

@@ -10,7 +10,8 @@ public class EscalaTemperaturasTest {
         Escala escalaKelvin = new EscalaKelvin();
         Escala escalaCelsius = new EscalaCelsius();
 
-        assertEquals(escalaKelvin.grados(273.15).grados, escalaKelvin.grados(escalaCelsius.grados(0)).grados);
+        assertEquals(escalaKelvin.grados(273.15), escalaKelvin.grados(escalaCelsius.grados(0)));
+        assertEquals(escalaKelvin.grados(313.15), escalaKelvin.grados(escalaCelsius.grados(40)));
     }
 
     @Test
@@ -18,6 +19,6 @@ public class EscalaTemperaturasTest {
         Escala escalaKelvin = new EscalaKelvin();
         Escala escalaCelsius = new EscalaCelsius();
 
-        assertEquals(escalaCelsius.grados(100).grados, escalaCelsius.grados(escalaKelvin.grados(373.15)).grados);
+        assertEquals(escalaCelsius.grados(100), escalaCelsius.grados(escalaKelvin.grados(373.15)));
     }
 }
